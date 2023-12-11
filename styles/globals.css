@@ -1,0 +1,69 @@
+/* styles/globals.css */
+
+/* Import Tailwind's base styles */
+@import 'tailwindcss/base';
+
+/* Import Tailwind's components */
+@import 'tailwindcss/components';
+
+/* Import Bootstrap */
+@import 'bootstrap/dist/css/bootstrap.css';
+
+/* Define the 'disabled' class for styling disabled input fields */
+.disabled {
+  background-color: #f5f5f5;
+  color: #000;
+  cursor: not-allowed;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Header styles */
+.big-header {
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Dropdown Styling */
+#orientationSelector {
+    font-size: 1rem; /* Consistent with Tailwind's font sizing */
+    color: #333;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.375rem; /* Rounded corners similar to Tailwind */
+    background-color: #fff;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+#orientationSelector:hover {
+    border-color: #888;
+}
+
+/* Label Styling for Consistency */
+label[for="orientationSelector"] {
+    font-size: 1rem;
+    color: #333;
+    margin-right: 0.5rem;
+}
+
+/* Styling for the orientation label */
+.orientation-label {
+    display: block; /* Makes the label a block element, positioning it above the dropdown */
+    font-size: 1rem; /* Adjust font size as needed */
+    color: #fff; /* Adjust color as needed, considering the dark mode */
+    margin-bottom: 0.25rem; /* Space between the label and the dropdown */
+}
+
+/* Dark mode specific styles for orientation label */
+body.dark-mode .orientation-label {
+    color: #fff; /* Light color text for dark mode */
+}
+
+/* Additional global styles can be added here */
