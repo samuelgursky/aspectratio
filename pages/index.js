@@ -4,6 +4,17 @@ import AspectRatioVisualizerHorizontal from '../components/AspectRatioVisualizer
 import AspectRatioVisualizerVertical from '../components/AspectRatioVisualizerVertical';
 
 const Home = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsMobile(window.innerWidth < 768);
+      const handleResize = () => setIsMobile(window.innerWidth < 768);
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
+  
   const [ratio, setRatio] = useState(16 / 9);
   const [orientation, setOrientation] = useState('horizontal'); 
 
@@ -30,9 +41,9 @@ const Home = () => {
       <br />
 
       {orientation === 'horizontal' ? (
-        <AspectRatioVisualizerHorizontal ratio={ratio} />
+        !isMobile && <AspectRatioVisualizerHorizontal ratio={ratio} />
       ) : (
-        <AspectRatioVisualizerVertical ratio={ratio} />
+        !isMobile && <AspectRatioVisualizerVertical ratio={ratio} />
       )}
 
       <AspectRatioDefiner onRatioChange={setRatio} />

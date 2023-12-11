@@ -67,3 +67,9 @@ body.dark-mode .orientation-label {
 }
 
 /* Additional global styles can be added here */
+
+@media (max-width: 768px) {
+    .visualizer {
+        display: none;
+    }
+}
